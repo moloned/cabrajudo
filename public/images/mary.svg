@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <circle cx="80" cy="80" r="76" fill="#042F2E" stroke="#14B8A6" stroke-width="4"/>
+  <circle cx="80" cy="52" r="24" fill="#FED7AA"/>
+  <path d="M52,54 C52,28 66,20 80,20 C94,20 108,28 108,54 C106,70 102,84 98,88 C94,84 94,70 94,62 C94,52 88,44 80,44 C72,44 66,52 66,62 C66,70 66,84 62,88 C58,84 54,70 52,54 Z" fill="#78350F"/>
+  <path d="M32,135 C32,95 50,84 80,84 C110,84 128,95 128,135 Z" fill="#0D9488"/>
+  <!-- Children's Officer Shield Badge -->
+  <path d="M80,105 L92,112 L92,126 C92,134 80,140 80,140 C80,140 68,134 68,126 L68,112 Z" fill="#FDE047" stroke="#042F2E" stroke-width="2"/>
+</svg>
