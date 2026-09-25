@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <circle cx="80" cy="80" r="76" fill="#1E293B" stroke="#F59E0B" stroke-width="4"/>
+  <!-- Head & Hair -->
+  <circle cx="80" cy="50" r="26" fill="#FDE68A"/>
+  <path d="M54,48 C54,30 70,20 80,20 C90,20 106,30 106,48 C106,36 94,30 80,30 C66,30 54,36 54,48 Z" fill="#94A3B8"/>
+  <!-- Shoulders & White Gi -->
+  <path d="M30,135 C30,95 48,82 80,82 C112,82 130,95 130,135 Z" fill="#F8FAFC"/>
+  <!-- Lapel V-fold (Left over Right) -->
+  <path d="M58,82 L80,118 L88,118 L64,82 Z" fill="#E2E8F0"/>
+  <path d="M102,82 L76,122 L70,122 L96,82 Z" fill="#CBD5E1"/>
+  <!-- 6th Dan Kohaku Belt (Red and White alternating sections) -->
+  <rect x="52" y="122" width="56" height="14" rx="2" fill="#DC2626"/>
+  <rect x="62" y="122" width="10" height="14" fill="#FFFFFF"/>
+  <rect x="82" y="122" width="10" height="14" fill="#FFFFFF"/>
+  <!-- Olympic Rings Mini Accent -->
+  <g transform="translate(80, 150) scale(0.6)">
+    <circle cx="-16" cy="0" r="6" fill="none" stroke="#2563EB" stroke-width="2"/>
+    <circle cx="0" cy="0" r="6" fill="none" stroke="#111827" stroke-width="2"/>
+    <circle cx="16" cy="0" r="6" fill="none" stroke="#DC2626" stroke-width="2"/>
+  </g>
+</svg>

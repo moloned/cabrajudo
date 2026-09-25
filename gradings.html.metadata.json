@@ -1,0 +1,5 @@
+{
+  "summary": "gradings.html rewritten to directly embed the CabraGrading React Coach Portal. The React CSS/JS loads from /CabraGrading/assets/ into a #root div, eliminating the broken iframe. A dark top bar provides links to the Mon and Kyu study guide standalone pages.",
+  "updatedAt": "2026-09-18T08:29:12.382061500Z",
+  "userFacing": true
+}

@@ -1,0 +1,14 @@
+{
+  "name": "cabrajudo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cabra Judo Club - Dublin Martial Arts & Judo Training",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.2"
+  }
+}

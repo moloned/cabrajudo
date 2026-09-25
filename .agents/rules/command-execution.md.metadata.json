@@ -1,0 +1,4 @@
+{
+  "summary": "Command execution policy rule — instructs the agent to never ask for permission on routine WSL/terminal commands",
+  "updatedAt": "2026-09-18T08:54:18.495790600Z"
+}

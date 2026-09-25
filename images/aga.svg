@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <circle cx="80" cy="80" r="76" fill="#0F172A" stroke="#F5C542" stroke-width="4"/>
+  <!-- Hair back -->
+  <path d="M48,58 C48,28 112,28 112,58 C112,78 108,95 104,102 C96,88 96,80 96,80 C96,80 64,80 64,80 C64,80 64,88 56,102 C52,95 48,78 48,58 Z" fill="#475569"/>
+  <!-- Face -->
+  <circle cx="80" cy="56" r="24" fill="#FDE68A"/>
+  <!-- Hair front styling -->
+  <path d="M54,48 C58,32 74,26 86,28 C100,30 108,38 108,48 C102,40 92,36 82,38 C72,40 60,44 54,48 Z" fill="#334155"/>
+  <!-- Professional Blazer / Torso -->
+  <path d="M30,140 C30,98 52,86 80,86 C108,86 130,98 130,140 Z" fill="#1E293B"/>
+  <!-- Inner shirt -->
+  <path d="M66,86 L80,116 L94,86 Z" fill="#F8FAFC"/>
+  <!-- Lapels -->
+  <path d="M52,86 L74,124 L64,124 L42,86 Z" fill="#334155"/>
+  <path d="M108,86 L86,124 L96,124 L118,86 Z" fill="#334155"/>
+  <!-- Mindset / Psychology emblem icon badge on lapel -->
+  <circle cx="98" cy="112" r="9" fill="#F5C542"/>
+  <path d="M95,112 A3,3 0 0,1 101,112 A3,3 0 0,1 98,115 L98,116" fill="none" stroke="#0F172A" stroke-width="1.6" stroke-linecap="round"/>
+</svg>

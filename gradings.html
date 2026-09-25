@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabra Judo (c) 2026 - Grading System &amp; Examination Portal</title>
+  <meta name="description" content="Official Cabra Judo Club grading examination portal, Irish Judo Association (IJA) syllabus, Junior Mon study guide, and Adult Kyu study guide.">
+  <meta property="og:title" content="Cabra Judo Club - Grading System &amp; Portal">
+  <meta property="og:description" content="Candidate assessment workflow, syllabus checklists, study guides, and certificate generation.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Cabra site styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- CabraGrading Coach Portal CSS (React app) -->
+  <link rel="stylesheet" crossorigin href="/CabraGrading/assets/main-_Bt0zL_M.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/cabra_mon.png">
+
+  <style>
+    /* Study guide quick-access cards */
+    .study-guide-bar {
+      background: #1E293B;
+      border-bottom: 3px solid var(--color-primary);
+    }
+    .study-guide-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      flex-wrap: wrap;
+    }
+    .study-guide-bar-label {
+      color: #94A3B8;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+    .study-guide-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #E2E8F0;
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.18s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .study-guide-btn:hover {
+      background: var(--color-primary);
+      color: #0F172A;
+      border-color: var(--color-primary);
+    }
+    .study-guide-btn.btn-mon {
+      border-color: rgba(220, 38, 38, 0.5);
+      color: #FCA5A5;
+    }
+    .study-guide-btn.btn-mon:hover {
+      background: #DC2626;
+      color: #fff;
+      border-color: #DC2626;
+    }
+    .study-guide-btn.btn-kyu {
+      border-color: rgba(34, 197, 94, 0.5);
+      color: #86EFAC;
+    }
+    .study-guide-btn.btn-kyu:hover {
+      background: #16A34A;
+      color: #fff;
+      border-color: #16A34A;
+    }
+
+    /* React portal wrapper */
+    #grading-portal-root {
+      background: #0F172A;
+      min-height: 80vh;
+    }
+
+    /* Slim top info bar */
+    .portal-info-bar {
+      background: #F1F5F9;
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.5rem 0;
+      font-size: 0.83rem;
+      color: var(--color-text-muted);
+    }
+    .portal-info-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .portal-info-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: #E0F2FE;
+      color: #0369A1;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" role="alert">
+    <span class="badge-icon">Notice</span>
+    <span>All classes in Lindsay Rd until Cabra Main Hall repairs complete</span>
+  </div>
+
+  <!-- Global Header & Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-link" aria-label="Cabra Judo Club Home">
+          <img src="images/cabra_mon.png" alt="Cabra Judo Club Crest" class="brand-logo">
+          <div class="brand-text">
+            <span class="brand-title">Cabra Judo (c) 2026</span>
+            <span class="brand-subtitle">カブラ柔道クラブ</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="alonzo.html" class="nav-link nav-link-founder" style="font-weight: 800;">🥋 Founder</a>
+          <a href="gradings.html" class="nav-link active">Gradings</a>
+          <a href="payments.html" class="nav-link">Payments</a>
+          <a href="staff.html" class="nav-link">Staff</a>
+          <a href="events.html" class="nav-link">Events</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="safeguarding.html" class="nav-link">Safeguarding &amp; Policies</a>
+          <a href="payments.html" class="nav-cta-btn">Join Now</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="alonzo.html" class="mobile-nav-link mobile-nav-founder" style="font-weight: 800;">🥋 Founder (Alonzo Sensei)</a></li>
+        <li><a href="gradings.html" class="mobile-nav-link active">Gradings</a></li>
+        <li><a href="payments.html" class="mobile-nav-link">Payments</a></li>
+        <li><a href="staff.html" class="mobile-nav-link">Staff</a></li>
+        <li><a href="events.html" class="mobile-nav-link">Events</a></li>
+        <li><a href="shop.html" class="mobile-nav-link">Shop</a></li>
+        <li><a href="safeguarding.html" class="mobile-nav-link">Safeguarding &amp; Policies</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Study Guide Quick-Access Bar -->
+  <div class="study-guide-bar">
+    <div class="container">
+      <div class="study-guide-bar-inner">
+        <span class="study-guide-bar-label">📚 Study Guides:</span>
+        <a href="mon-study-guide.html" class="study-guide-btn btn-mon">
+          🔴 Junior Mon Guide (Under 14s)
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="kyu-study-guide.html" class="study-guide-btn btn-kyu">
+          🥋 Senior Kyu Guide (Teens &amp; Adults)
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </a>
+        <a href="CabraGrading/" target="_blank" rel="noopener noreferrer" class="study-guide-btn" style="margin-left:auto; border-color: rgba(245,197,66,0.5); color: var(--color-primary);">
+          ↗ Open Portal Full Screen
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portal info bar -->
+  <div class="portal-info-bar">
+    <div class="container">
+      <div class="portal-info-bar-inner">
+        <span class="portal-info-badge">📋 Coach &amp; Examiner Tool</span>
+        <span>Import candidates via CSV • Tick technique requirements • Record Pass / Defer • Print certificates</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CabraGrading React App Root — mounts directly here -->
+  <div id="grading-portal-root">
+    <div id="root"></div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="images/cabra_mon.png" alt="Cabra Judo Logo" style="width: 42px; height: 42px; border-radius: var(--radius-full); background: #000; border: 1.5px solid var(--color-primary); object-fit: cover;">
+            <span style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: #FFF;">Cabra Judo Club</span>
+          </div>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #9CA3AF; margin-bottom: 1rem;">
+            Founded in 2011 by Olympian Alonzo Henderson 6th Dan OLY. Dedicated to bringing high standards of Judo training and core values to the Dublin community.
+          </p>
+          <div style="display: flex; gap: 0.5rem; font-size: 0.8rem; color: var(--color-primary-light);">
+            <span>友情 Friendship</span> • <span>名誉 Honor</span> • <span>礼儀 Politeness</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="alonzo.html" class="footer-link" style="font-weight: 700;">🥋 Founder (Alonzo Sensei)</a></li>
+            <li><a href="gradings.html" class="footer-link" style="color: var(--color-primary);">Gradings &amp; Portal</a></li>
+            <li><a href="shop.html" class="footer-link">Club Shop</a></li>
+            <li><a href="payments.html" class="footer-link">Payments &amp; Fees</a></li>
+            <li><a href="staff.html" class="footer-link">Staff &amp; Coaches</a></li>
+            <li><a href="safeguarding.html" class="footer-link">Safeguarding &amp; Policies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Class Times -->
+        <div>
+          <h4 class="footer-col-title">Class Times</h4>
+          <ul class="footer-links" style="font-size: 0.88rem;">
+            <li><strong style="color: #FFF;">Mon &amp; Wed:</strong> 17:45 (Kids 5+)</li>
+            <li><strong style="color: #FFF;">Mon &amp; Wed:</strong> 18:30 (Squad 10+)</li>
+            <li><strong style="color: #FFF;">Saturday:</strong> 10:00 (Squad 10+)</li>
+            <li><strong style="color: #FFF;">Saturday:</strong> 12:00 (Kids 5+)</li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div>
+          <h4 class="footer-col-title">Contact &amp; Location</h4>
+          <ul class="footer-links" style="font-size: 0.9rem;">
+            <li>📍 Lindsay Road N.S., Glasnevin, Dublin</li>
+            <li>💬 WhatsApp: <a href="https://wa.me/353861502011" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">0861502011</a></li>
+            <li>🛡️ Children's Officer: Mary McDonald</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; Cabra Judo 2026. All rights reserved.</div>
+        <div>Affiliated with the Irish Judo Association (IJA) &amp; Sport Ireland</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cabra site JS (mobile menu, nav highlight) -->
+  <script type="module" src="js/main.js"></script>
+
+  <!-- CabraGrading React Coach Portal — loads directly into #root above -->
+  <link rel="modulepreload" crossorigin href="/CabraGrading/assets/jsx-runtime-CjgHguxh.js">
+  <link rel="modulepreload" crossorigin href="/CabraGrading/assets/createLucideIcon-D_J4BwJ2.js">
+  <link rel="modulepreload" crossorigin href="/CabraGrading/assets/adultKyuStudyGuideData-C6bxhKfY.js">
+  <script type="module" crossorigin src="/CabraGrading/assets/main-B7wRuLgA.js"></script>
+
+</body>
+</html>

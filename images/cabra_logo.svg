@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Circular Path for top text -->
+    <path id="textPathTop" d="M 50, 200 A 150, 150 0 0, 1 350, 200" />
+    <!-- Circular Path for bottom text -->
+    <path id="textPathBottom" d="M 350, 200 A 150, 150 0 0, 1 50, 200" />
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <radialGradient id="tatamiMat" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </radialGradient>
+  </defs>
+
+  <!-- Outer Ring (Gold Border) -->
+  <circle cx="200" cy="200" r="192" fill="#0B0F19" stroke="url(#goldGradient)" stroke-width="8" />
+
+  <!-- Secondary Inner Gold Ring -->
+  <circle cx="200" cy="200" r="162" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,4" />
+
+  <!-- Inner Center Circle -->
+  <circle cx="200" cy="200" r="128" fill="url(#tatamiMat)" stroke="url(#goldGradient)" stroke-width="4" />
+
+  <!-- Japanese Characters (Top Subtitle) -->
+  <text x="200" y="115" font-family="'Noto Sans JP', 'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#FDE047" text-anchor="middle" letter-spacing="3">カブラ ヤギ • 史上最高</text>
+
+  <!-- Judo Throw Silhouette Artwork in Center -->
+  <g transform="translate(200, 205) scale(0.9)" text-anchor="middle">
+    <!-- Red Sun Accent behind Judokas -->
+    <circle cx="0" cy="-5" r="52" fill="#DC2626" opacity="0.9" />
+
+    <!-- Tori (Thrower in White Gi) -->
+    <!-- Head -->
+    <circle cx="-14" cy="-28" r="10" fill="#F8FAFC" />
+    <!-- Torso & Arms executing Seoi Nage -->
+    <path d="M -18,-18 C -25,-10 -35,5 -30,22 C -26,30 -15,35 0,35 C 10,35 15,22 12,10 C 10,-2 2,-14 -12,-18 Z" fill="#F8FAFC" />
+    <!-- Black Belt (Kuro-obi) -->
+    <path d="M -30,12 C -20,16 -5,17 8,13 L 10,18 C -4,22 -20,21 -31,17 Z" fill="#111827" />
+    <path d="M -10,16 L -16,36 L -10,36 L -6,17 Z" fill="#111827" />
+    <!-- Legs -->
+    <path d="M -24,30 L -36,65 L -26,67 L -14,35 Z" fill="#F8FAFC" />
+    <path d="M -8,35 L 6,65 L 16,62 L 4,32 Z" fill="#F8FAFC" />
+
+    <!-- Uke (Airborne Defender in Blue Gi) -->
+    <!-- Head -->
+    <circle cx="28" cy="-42" r="9" fill="#F8FAFC" />
+    <!-- Torso inverted over Tori's back -->
+    <path d="M 12,-38 C 22,-30 38,-15 32,2 C 26,14 12,10 -2,-8 C -8,-16 -4,-30 8,-36 Z" fill="#2563EB" />
+    <!-- White / Blue belt -->
+    <path d="M 15,-18 C 22,-14 26,-8 28,0 L 23,2 C 21,-4 18,-9 12,-14 Z" fill="#F8FAFC" />
+    <!-- Sweeping Legs in Air -->
+    <path d="M 30,-5 L 56,12 L 50,18 L 24,4 Z" fill="#2563EB" />
+    <path d="M 35,-15 L 62,-22 L 64,-16 L 38,-8 Z" fill="#2563EB" />
+    <!-- Dynamic Motion Swoosh -->
+    <path d="M -45,-30 A 65 65 0 0 1 55,-35" fill="none" stroke="#FDE047" stroke-width="3" stroke-linecap="round" opacity="0.8" />
+  </g>
+
+  <!-- Established Date Badge -->
+  <rect x="160" y="278" width="80" height="22" rx="6" fill="#DC2626" stroke="#FEF08A" stroke-width="1.5" />
+  <text x="200" y="293" font-family="'Roboto Slab', 'Segoe UI', serif" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">EST. 2011</text>
+
+  <!-- Curved Text: CABRA JUDO CLUB (Top) -->
+  <text fill="#FFFFFF" font-family="'Roboto Slab', 'Georgia', serif" font-size="24" font-weight="900" letter-spacing="4">
+    <textPath href="#textPathTop" startOffset="50%" text-anchor="middle">
+      CABRA JUDO CLUB
+    </textPath>
+  </text>
+
+  <!-- Curved Text: DUBLIN 7 • IRELAND (Bottom) -->
+  <text fill="#F59E0B" font-family="'Roboto Slab', 'Segoe UI', sans-serif" font-size="19" font-weight="800" letter-spacing="4">
+    <textPath href="#textPathBottom" startOffset="50%" text-anchor="middle">
+      DUBLIN 7 • IRELAND
+    </textPath>
+  </text>
+
+  <!-- Star accents -->
+  <polygon points="62,192 65,198 72,199 67,204 68,211 62,207 56,211 57,204 52,199 59,198" fill="#F59E0B" />
+  <polygon points="338,192 341,198 348,199 343,204 344,211 338,207 332,211 333,204 328,199 335,198" fill="#F59E0B" />
+</svg>

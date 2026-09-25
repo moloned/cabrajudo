@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabra Judo (c) 2026 - Payments</title>
+  <meta name="description" content="Cabra Judo Club - Online membership and class payments. Secure Stripe checkout for trial classes and monthly subscriptions.">
+  <meta property="og:title" content="Cabra Judo (c) 2026 - Payments">
+  <meta property="og:description" content="Cabra Judo Club - Online membership and class payments.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/cabra_mon.png">
+
+  <!-- Stripe Buy Button Component -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" role="alert">
+    <span class="badge-icon">Notice</span>
+    <span>All classes in Lindsay Rd until Cabra Main Hall repairs complete</span>
+  </div>
+
+  <!-- Global Header & Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-link" aria-label="Cabra Judo Club Home">
+          <img src="images/cabra_mon.png" alt="Cabra Judo Club Crest" class="brand-logo">
+          <div class="brand-text">
+            <span class="brand-title">Cabra Judo (c) 2026</span>
+            <span class="brand-subtitle">カブラ柔道クラブ</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="alonzo.html" class="nav-link nav-link-founder" style="font-weight: 800;">🥋 Founder</a>
+          <a href="gradings.html" class="nav-link">Gradings</a>
+          <a href="payments.html" class="nav-link active">Payments</a>
+          <a href="staff.html" class="nav-link">Staff</a>
+          <a href="events.html" class="nav-link">Events</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="safeguarding.html" class="nav-link">Safeguarding &amp; Policies</a>
+          <a href="payments.html" class="nav-cta-btn">Join Now</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="alonzo.html" class="mobile-nav-link mobile-nav-founder" style="font-weight: 800;">🥋 Founder (Alonzo Sensei)</a></li>
+        <li><a href="gradings.html" class="mobile-nav-link">Gradings</a></li>
+        <li><a href="payments.html" class="mobile-nav-link active">Payments</a></li>
+        <li><a href="staff.html" class="mobile-nav-link">Staff</a></li>
+        <li><a href="events.html" class="mobile-nav-link">Events</a></li>
+        <li><a href="shop.html" class="mobile-nav-link">Shop</a></li>
+        <li><a href="safeguarding.html" class="mobile-nav-link">Safeguarding &amp; Policies</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Section Banner -->
+  <div class="section-banner">
+    <div class="container">
+      <h1 class="section-banner-title">Payments &amp; Membership</h1>
+      <p style="font-size: 1.15rem; color: #1F2937; margin-top: 0.25rem;">Simple, secure online checkout powered by Stripe. No hidden fees or long commitments.</p>
+    </div>
+  </div>
+
+  <!-- Pricing Cards Main Section -->
+  <main class="section-padding">
+    <div class="container">
+      
+      <div class="pricing-grid">
+        <!-- Tier 1: Trial Class -->
+        <div id="trial" class="pricing-card">
+          <div class="pricing-header">
+            <h2 class="pricing-tier">Trial Class</h2>
+            <div class="pricing-cost">€1</div>
+            <div class="pricing-freq">Single introductory class</div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Ideal for beginners &amp; prospective members</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Experience a class with Olympian coaches</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>No judogi uniform required on first day</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Instant confirmation sent via email</span>
+            </li>
+          </ul>
+
+          <div class="stripe-btn-wrapper">
+            <stripe-buy-button
+              buy-button-id="buy_btn_1SKFTKEdZt5DG3xZpmTogn7N"
+              publishable-key="pk_live_GGPUbe4mfpR1ghnAeHgrhIR8"
+            >
+            </stripe-buy-button>
+            <div class="payment-badges">Visa • Mastercard • Amex • Apple Pay • Link</div>
+          </div>
+        </div>
+
+        <!-- Tier 2: Kids Monthly Subscription -->
+        <div class="pricing-card featured">
+          <div class="featured-pill">Most Popular</div>
+          <div class="pricing-header">
+            <h2 class="pricing-tier">Kids Monthly Subscription</h2>
+            <div class="pricing-cost">€40 <span class="pricing-freq">/ month</span></div>
+            <div class="pricing-freq">For children aged 5+</div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Up to 3 weekly classes (Mon, Wed, Sat)</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Official Irish Judo Association syllabus</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Regular belt gradings &amp; awards</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Safe, certified child protection coaches</span>
+            </li>
+          </ul>
+
+          <div class="stripe-btn-wrapper">
+            <stripe-buy-button
+              buy-button-id="buy_btn_1SKEm5EdZt5DG3xZPjMn7r9O"
+              publishable-key="pk_live_GGPUbe4mfpR1ghnAeHgrhIR8"
+            >
+            </stripe-buy-button>
+            <div class="payment-badges">Visa • Mastercard • Amex • Link</div>
+          </div>
+        </div>
+
+        <!-- Tier 3: Adults Monthly Subscription -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h2 class="pricing-tier">Adults Monthly Subscription</h2>
+            <div class="pricing-cost">€50 <span class="pricing-freq">/ month</span></div>
+            <div class="pricing-freq">Squad 10+ &amp; Adults</div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Full training under Olympian 6th Dan</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Randori sparring &amp; technical coaching</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>National &amp; international competition prep</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>Adult fitness, mobility &amp; self defense</span>
+            </li>
+          </ul>
+
+          <div class="stripe-btn-wrapper">
+            <stripe-buy-button
+              buy-button-id="buy_btn_1SKEiCEdZt5DG3xZWXPHxGhb"
+              publishable-key="pk_live_GGPUbe4mfpR1ghnAeHgrhIR8"
+            >
+            </stripe-buy-button>
+            <div class="payment-badges">Visa • Mastercard • Amex • Link</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Support & Help -->
+      <div class="content-card" style="margin-top: 3rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem;">Need Assistance with Payment?</h3>
+        <p style="color: var(--color-text-muted); margin-bottom: 1.25rem;">
+          If you have questions about payment methods, family discounts, or managing your subscription, please get in touch with our club secretary.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+          <a href="https://wa.me/353861502011" target="_blank" rel="noopener noreferrer" class="pill-link" style="padding: 0.6rem 1.25rem; font-size: 0.95rem;">
+            💬 WhatsApp: 0861502011
+          </a>
+          <a href="mailto:cabrajudo@gmail.com" class="pill-link" style="padding: 0.6rem 1.25rem; font-size: 0.95rem; background: #FEF3C7; color: #B45309;">
+            ✉️ cabrajudo@gmail.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="images/cabra_mon.png" alt="Cabra Judo Logo" style="width: 42px; height: 42px; border-radius: var(--radius-full); background: #000; border: 1.5px solid var(--color-primary); object-fit: cover;">
+            <span style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: #FFF;">Cabra Judo Club</span>
+          </div>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #9CA3AF;">
+            Founded in 2011 by Olympian Alonzo Henderson 6th Dan OLY. Dedicated to bringing high standards of Judo training and core values to the Dublin community.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="alonzo.html" class="footer-link" style="font-weight: 700;">🥋 Founder (Alonzo Sensei)</a></li>
+            <li><a href="gradings.html" class="footer-link">Gradings &amp; Portal</a></li>
+            <li><a href="shop.html" class="footer-link">Club Shop &amp; T-Shirts</a></li>
+            <li><a href="payments.html" class="footer-link">Payments &amp; Fees</a></li>
+            <li><a href="staff.html" class="footer-link">Staff &amp; Coaches</a></li>
+            <li><a href="safeguarding.html" class="footer-link">Safeguarding &amp; Policies</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Class Times</h4>
+          <ul class="footer-links" style="font-size: 0.88rem;">
+            <li><strong style="color: #FFF;">Mon &amp; Wed:</strong> 17:45 (Kids 5+)</li>
+            <li><strong style="color: #FFF;">Mon &amp; Wed:</strong> 18:30 (Squad 10+)</li>
+            <li><strong style="color: #FFF;">Saturday:</strong> 10:00 (Squad 10+)</li>
+            <li><strong style="color: #FFF;">Saturday:</strong> 12:00 (Kids 5+)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Contact &amp; Location</h4>
+          <ul class="footer-links" style="font-size: 0.9rem;">
+            <li>📍 Lindsay Road N.S., Glasnevin, Dublin</li>
+            <li>💬 WhatsApp: <a href="https://wa.me/353861502011" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">0861502011</a></li>
+            <li>✉️ Email: <a href="mailto:cabrajudo@gmail.com" style="color: var(--color-primary);">cabrajudo@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; Cabra Judo 2026. All rights reserved.</div>
+        <div>Payments secured with 256-bit SSL encryption via Stripe</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

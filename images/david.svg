@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <circle cx="80" cy="80" r="76" fill="#1E293B" stroke="#10B981" stroke-width="4"/>
+  <circle cx="80" cy="52" r="24" fill="#FDE68A"/>
+  <path d="M56,42 C56,26 70,22 80,22 C90,22 104,26 104,42 C98,34 90,32 80,32 C70,32 62,34 56,42 Z" fill="#334155"/>
+  <path d="M30,135 C30,95 48,82 80,82 C112,82 130,95 130,135 Z" fill="#F8FAFC"/>
+  <!-- Lapel V-fold -->
+  <path d="M58,82 L80,118 L88,118 L64,82 Z" fill="#E2E8F0"/>
+  <path d="M102,82 L76,122 L70,122 L96,82 Z" fill="#CBD5E1"/>
+  <rect x="52" y="122" width="56" height="12" rx="2" fill="#111827"/>
+</svg>
