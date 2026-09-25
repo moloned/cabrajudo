@@ -167,12 +167,14 @@ button {
   background: #000000;
   border: 1.5px solid var(--color-primary);
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  white-space: nowrap;
 }
 
 .brand-title {
