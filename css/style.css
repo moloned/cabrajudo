@@ -242,6 +242,10 @@ button {
 }
 
 .nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: #000;
   font-weight: 700;
