@@ -2,6 +2,7 @@
   "name": "cabrajudo",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Cabra Judo Club - Dublin Martial Arts & Judo Training",
   "scripts": {
     "dev": "vite",
