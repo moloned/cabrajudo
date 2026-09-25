@@ -3059,3 +3059,59 @@ button {
 
 
 
+
+
+/* Modal Print Styles for Blog PDF */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm;
+  }
+  body {
+    overflow: visible !important;
+  }
+  body.modal-open {
+    visibility: hidden;
+    overflow: visible !important;
+    height: auto !important;
+  }
+  body.modal-open #article-modal, 
+  body.modal-open #article-modal * {
+    visibility: visible;
+  }
+  #article-modal {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: visible !important;
+    box-shadow: none;
+  }
+  .article-modal-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    transform: none;
+    overflow: visible !important;
+  }
+  .article-modal-close,
+  .native-blog-pdf-btn {
+    display: none !important;
+  }
+  .article-modal-featured-img-wrap img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+  .article-modal-body, .article-modal-header {
+    page-break-inside: avoid;
+    overflow: visible !important;
+  }
+}

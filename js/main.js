@@ -201,10 +201,15 @@ function initNativeBlog() {
           <div class="native-blog-date">📅 ${post.dateFormatted || post.date}</div>
           <h4 class="native-blog-card-title">${post.title}</h4>
           <p class="native-blog-card-intro">${post.intro || ''}</p>
-          <button type="button" class="native-blog-read-btn">
-            <span>Read Full Story &amp; Photos</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </button>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <button type="button" class="native-blog-read-btn">
+              <span>Read Full Story &amp; Photos</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+            <button type="button" class="native-blog-pdf-btn" aria-label="Download PDF" onclick="event.stopPropagation(); downloadPostPdf('${post.id}')" style="background:none;border:none;cursor:pointer;color:#4B5563;display:flex;align-items:center;padding:5px;" title="Download PDF">
+               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </button>
+          </div>
         </div>
       `;
 
@@ -311,3 +316,13 @@ function initNativeBlog() {
 }
 
 
+
+window.downloadPostPdf = function(postId) {
+  const post = blogPosts.find(p => p.id === postId);
+  if (post) {
+    openArticle(post);
+    setTimeout(() => {
+      window.print();
+    }, 300);
+  }
+};
